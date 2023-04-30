@@ -10,7 +10,7 @@
 [ ! -d "$HOME/github/zsh-history-substring-search" ] && git -C $HOME/github clone --depth=1 https://github.com/zsh-users/zsh-history-substring-search;\
   git -C $HOME/github/zsh-history-substring-search config pull.rebase false
 
-source $HOME/github/powerlevel10k/powerlevel10k.zsh-theme
+source ~/github/powerlevel10k/powerlevel10k.zsh-theme
 
 grep -qxF 'source ~/github/powerlevel10k/powerlevel10k.zsh-theme' $HOME/.zshrc ||\
   echo 'source ~/github/powerlevel10k/powerlevel10k.zsh-theme' >> $HOME/.zshrc
