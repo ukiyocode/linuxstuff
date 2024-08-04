@@ -1,0 +1,17 @@
+[Desktop Entry]
+Type=Application
+Exec=st
+Icon=utilities-terminal
+Terminal=false
+Categories=System;TerminalEmulator;
+
+Name=ST
+GenericName=Terminal
+Comment=A suckless terminal emulator
+StartupNotify=true
+StartupWMClass=st-256color
+Actions=New;
+
+[Desktop Action New]
+Name=New Terminal
+Exec=st
