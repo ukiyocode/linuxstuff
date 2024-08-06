@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Exec=st
+Exec=st -G `xdpyinfo | awk '/dimensions/ {print $2}'`
 Icon=utilities-terminal
 Terminal=false
 Categories=System;TerminalEmulator;
