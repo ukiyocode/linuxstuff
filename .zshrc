@@ -15,6 +15,7 @@ source ~/github/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/github/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 #aliases
+alias grep="grep -i"
 alias ll="ls -lah --color=auto --group-directories-first"
 alias gdu=gdu-go
 #alias hh="distrobox-host-exec"
@@ -41,7 +42,7 @@ then
 fi
 
 #tmux stuff
-if [[ $(ps -p $(ps -p $$ -o ppid=) -o args=) =~ "alacritty" ]] && command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+if [[ $(ps -p $(ps -p $$ -o ppid=) -o args=) =~ "$(which st)" ]] && command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
     if [ ! "$TMUX" ]; then
         tmux attach -t main || tmux new -s main
     fi
@@ -63,3 +64,4 @@ zle -N zle-line-init
 zle -N zle-line-finish  
 
 command -v fastfetch &> /dev/null && fastfetch
+export XDG_DATA_DIRS="/home/linuxbrew/.linuxbrew/share:$XDG_DATA_DIRS"
