@@ -1,0 +1,12 @@
+set linenumbers
+set tabsize 1
+set tabstospaces
+bind ^c copytext main
+bind ^x cut main
+bind ^v uncut main
+bind ^z undo main
+bind ^y redo main
+bind ^f whereis main
+bind ^n findnext main
+bind ^p findprevious main
+bind ^h replace main
