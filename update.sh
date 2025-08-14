@@ -3,30 +3,25 @@
 # if not root, run as root
 if [ $(id -u) -ne 0 ] 
 then
-    printf "**** nala ****\n"
-    sudo -i sh -c "nala upgrade -y; sudo -i nala autopurge; sudo -i nala clean"
+	printf "**** nala ****\n"
+    sudo -i sh -c "nala full-upgrade -y; sudo -i nala autopurge; sudo -i nala clean"
 fi
 
-printf "\n**** homebrew ****\n"
-brew update
-brew upgrade
-brew doctor
+printf "\n****** nix ******\n"
+rm -f ~/.config/alacritty/alacritty.toml
+nix flake update --flake .config/home-manager
+home-manager switch --show-trace
+nix-collect-garbage -d --quiet
 
 printf "\n**** flatpak ****\n"
-flatpak update
+flatpak update -y
 
-printf "\n**** powerlevel10k ****\n"
-git -C $HOME/github/powerlevel10k pull
-printf "**** zsh-autosuggestions ****\n"
-git -C $HOME/github/zsh-autosuggestions pull
-printf "**** zsh-syntax-highlighting ****\n"
-git -C $HOME/github/zsh-syntax-highlighting pull
-printf "**** zsh-history-substring-search ****\n"
-git -C $HOME/github/zsh-history-substring-search pull
+printf "\n**** docker ****\n"
+docker compose -f ~/docker/docker-compose.yml down
+docker compose -f ~/docker/docker-compose.yml pull --ignore-buildable
+docker compose -f ~/docker/docker-compose.yml up -d
 
-printf "\n**** gamescope ****\n"
-git -C $HOME/github/gamescope pull
-printf "Press enter to continue..."
+printf "\nPress enter to continue..."
 
 
 read _
