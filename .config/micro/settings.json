@@ -1,6 +1,7 @@
 {
-    "clipboard": "terminal",
+    "colorscheme": "catppuccin-mocha",
     "paste": true,
+    "scrollspeed": 10,
     "tabsize": 2,
-    "tabtospaces": true
+    "tabstospaces": true
 }
