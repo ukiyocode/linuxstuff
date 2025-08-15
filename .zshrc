@@ -5,7 +5,7 @@ SAVEHIST=10000
 bindkey -e
 
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/hajin/.zshrc'
+zstyle :compinstall filename '$HOME/.zshrc'
 autoload -Uz compinit
 compinit
 
