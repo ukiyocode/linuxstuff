@@ -6,13 +6,13 @@
 <labwc_config>
   <theme>
     <name>catppuccin-mocha</name>
-    <font name="CaskaydiaCove Nerd Font" size="10" />
+    <font name="FiraCode Nerd Font" size="10" />
   </theme>
   <keyboard>
     <default/>
     <!-- Use a different terminal emulator -->
     <keybind key="W-Return">
-      <action name="Execute" command="alacritty"/>
+      <action name="Execute" command="foot"/>
     </keybind>
     <!--
       Remove a previously defined keybind
