@@ -89,7 +89,7 @@ read_only = "\ue672"
 symbol = "\ue7b0 "
 
 [fill]
-symbol = "\u23af"
+symbol = "\u2500"
 
 [golang]
 symbol = "\ue724 "

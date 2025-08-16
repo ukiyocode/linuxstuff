@@ -22,16 +22,24 @@ export LESS="--mouse --wheel-lines=10 -R"
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 export MICRO_TRUECOLOR=1
 
-# Plugins
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+if [[ -o interactive ]]; then
 
-source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
+  # Plugins
+  source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+  bindkey '^[[A' history-substring-search-up
+  bindkey '^[[B' history-substring-search-down
 
-# Theme
-if [ "$TERM" != "linux" ]; then
-	eval "$(starship init zsh)"
+  source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+  # Theme
+  if [ "$TERM" != "linux" ]; then
+  	eval "$(starship init zsh)"
+  fi
+
+  if [[ -z $TMUX ]] && [[ -z "${NO_TMUX:-}" ]]; then
+    tmux attatch || tmux
+    echo "reee"
+  fi
 fi
