@@ -1,0 +1,8 @@
+#
+# This file is parsed by pam_env module
+#
+# Syntax: simple "KEY=VAL" pairs on separate lines
+#
+GTK_THEME=catppuccin-mocha-green-standard+default
+XCURSOR_THEME=catppuccin-mocha-green-cursors
+XCURSOR_SIZE=24
